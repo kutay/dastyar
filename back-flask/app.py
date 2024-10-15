@@ -4,10 +4,13 @@ import numpy as np
 import io
 import pytesseract
 import os
-from datetime import datetime
 from services.vocabulary import get_vocabulary_list
+import time
+from datetime import datetime, timedelta  # Import timedelta from datetime
 
 app = Flask(__name__)
+
+start_time = time.time()
 
 UPLOAD_FOLDER = "uploads/"
 if not os.path.exists(UPLOAD_FOLDER):
@@ -41,6 +44,21 @@ def drawing():
 @app.route("/chat")
 def chat():
     return render_template("chat.html")
+
+
+@app.route("/info")
+def info():
+    deploy_datetime = os.getenv("DEPLOY_DATETIME", "Unknown")
+
+    # Calculate uptime
+    current_time = time.time()
+    uptime_seconds = int(current_time - start_time)
+    uptime = str(timedelta(seconds=uptime_seconds))  # Use timedelta to format uptime
+
+    # Build the info JSON
+    info_data = {"deployed_datetime": deploy_datetime, "service_uptime": uptime}
+
+    return jsonify(info_data)
 
 
 from PIL import Image, ImageEnhance
@@ -123,4 +141,4 @@ def get_words():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
