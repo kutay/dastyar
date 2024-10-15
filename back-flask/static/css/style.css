@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+}
+
+.main {
+    padding: 20px;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+}
+
+#wordsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#wordsList li {
+    cursor: pointer;
+    padding: 5px 0;
+}
+#wordsList li .farsi {
+    font-size: 40px;
+}
+
+#wordsList li:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 55px;
+}
+
+.top-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.top-links ul li {
+    display: inline;
+}
+
+.top-links ul li a {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.top-links ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+td {
+    text-align: left;
+}
+td.farsi {
+    font-size: 40px;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+#searchInput {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

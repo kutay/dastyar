@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dastyar{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Top Menu -->
+    <header class="top-menu">
+        <div class="logo">
+            <a href="{{ url_for('index') }}"> <img src="{{ url_for('static', filename='logo/logo.jpg') }}"
+                    alt="Dastyar Logo"> </a>
+        </div>
+        <nav class="top-links">
+            <ul>
+                <li><a href="{{ url_for('vocabulary') }}">Vocabulary</a></li>
+                <!-- <li><a href="{{ url_for('flashcards') }}">Flashcards</a></li> -->
+                <li><a href="{{ url_for('drawing') }}">Drawing</a></li>
+                <!-- <li><a href="{{ url_for('chat') }}">Drawing</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+
+</html>

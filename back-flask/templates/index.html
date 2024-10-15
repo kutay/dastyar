@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Dastyar{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!-- Sidebar for the words list -->
+        <div class="sidebar">
+            <h2>Words List</h2>
+            <ul id="wordsList">
+                <!-- Words will be populated here from JavaScript -->
+            </ul>
+        </div>
+        
+
+        <!-- Main content with the canvas -->
+        <div class="main">
+        <div id="message"></div>
+
+            <canvas id="drawingCanvas" width="800" height="600"></canvas>
+            <br>
+            <button id="clearButton">Clear</button>
+            <button id="submitButton">Submit Drawing</button>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
+
+{% endblock %}

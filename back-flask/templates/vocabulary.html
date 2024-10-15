@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Vocabulary - Dastyar{% endblock %}
+
+{% block content %}
+<input type="text" id="searchInput" placeholder="Saisir un mot en français ou persan..." onkeyup="filterWords()">
+
+<table id="vocabularyTable">
+        <thead>
+        <tr>
+            <th>Farsi</th>
+            <th>Transliteration</th>
+            <th>French</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for word in words %}
+        <tr>
+            <td class="farsi">{{ word.farsi }}</td>
+            <td>{{ word.transliteration }}</td>
+            <td>{{ word.french }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<script src="{{ url_for('static', filename='js/vocabulary.js') }}"></script>
+
+
+{% endblock %}
